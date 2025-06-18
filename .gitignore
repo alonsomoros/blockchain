@@ -1,0 +1,14 @@
+# IntelliJ IDEA
+*.iml
+.idea/
+out/
+target/
+
+# Maven
+dependency-reduced-pom.xml
+build/
+*.log
+
+# General
+.DS_Store
+Thumbs.db
