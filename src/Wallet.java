@@ -63,11 +63,6 @@ public class Wallet {
         Transaction newTransaction = new Transaction(publicKey, _recipient, value, inputs);
         newTransaction.generateSignature(privateKey);
 
-        // Añadir output de cambio si hace falta
-        if (change > 0) {
-            newTransaction.outputs.add(new TransactionOutput(this.publicKey, change, newTransaction.transactionId));
-        }
-
         for (TransactionInput input : inputs) {
             UTXOs.remove(input.transactionOutputId);
         }
