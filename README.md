@@ -23,9 +23,14 @@ Una implementación simple de una **Blockchain desde cero en Java**. Este proyec
 java-blockchain/
 │
 ├── src/
-│   ├── Block.java           # Clase que representa un bloque
-│   ├── Blockchain.java      # Lógica principal de la blockchain
-│   ├── Main.java            # Punto de entrada del programa
+│   ├── Block.java               # Clase que representa un bloque
+│   ├── Blockchain.java          # Lógica principal de la blockchain
+│   ├── Main.java                # Punto de entrada del programa
+│   ├── StringUtil.java          # Clase para encriptar y gestionar datos
+│   ├── Transaction.java         # Clase que representa una transacción
+│   ├── TransactionInput.java    # Clase que representa una transacción entrante
+│   ├── TransactionOutput.java   # Clase que representa una transacción saliente
+│   └── Wallet.java              # Clase que representa una cartera virtual
 │
 ├── README.md
-└── pom.xml (si usas Maven)
+└── pom.xml
