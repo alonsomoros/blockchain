@@ -5,8 +5,8 @@ public class Block {
 
     public String hash;
     public String previousHash;
-    public String merkleRoot;
-    public ArrayList<Transaction> transactions = new ArrayList<>(); //our data will be a simple message.
+    public String merkleRoot; // It is a hash of all transactions in the block.
+    public ArrayList<Transaction> transactions = new ArrayList<>(); // Our data will be a simple message.
 
     private long timeStamp; // As number of milliseconds since 1/1/1970.
 
@@ -26,13 +26,16 @@ public class Block {
         );
     }
 
-    //Increases nonce value until hash target is reached.
+    // Increases nonce value until hash target is reached.
     public void mineBlock(int difficulty) {
         merkleRoot = StringUtil.getMerkleRoot(transactions);
         String target = StringUtil.getDificultyString(difficulty); //Create a string with difficulty * "0"
         while(!hash.substring( 0, difficulty).equals(target)) {
             nonce ++;
             hash = calculateHash();
+            if (nonce % 10000 == 0) {
+                System.out.println("Hash: " + hash);
+            }
         }
         System.out.println("Block Mined!!! : " + hash);
     }

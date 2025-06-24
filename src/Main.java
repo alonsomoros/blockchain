@@ -164,7 +164,7 @@ public class Main {
     }
 
     public static void addBlock(Block newBlock) {
-        newBlock.mineBlock(difficulty);
+        newBlock.mineBlock(3);
         blockchain.add(newBlock);
     }
 }
